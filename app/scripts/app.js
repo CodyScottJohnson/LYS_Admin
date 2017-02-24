@@ -20,7 +20,7 @@ angular
     'ngTouch',
     'ui.router'
   ])
-  .run(function($rootScope, $state, localStorageService) {
+  .run(function($rootScope, $state, localStorageService,Token) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
       var requireLogin = toState.data.requireLogin;
       if (typeof $rootScope.User === 'undefined') {
@@ -34,6 +34,10 @@ angular
       {
         event.preventDefault();
         $state.go('login');
+      }
+      else if(requireLogin && moment($rootScope.User.Token.TimeStamp).add($rootScope.User.Token.expires_in,'s') < moment()){
+        event.preventDefault();
+        Token.refreshToken().then(function(){$state.go('app.Main');},function(){$state.go('login');});
       }
     });
   })
@@ -60,7 +64,7 @@ angular
       })
       .state('app.Main', {
         url: '/',
-        templateUrl: 'views/General/landing.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl',
 
       })

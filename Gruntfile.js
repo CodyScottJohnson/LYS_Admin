@@ -26,7 +26,8 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    credentials: require('./credentials.json') || {}
   };
 
   // Define the configuration for all the tasks
@@ -42,14 +43,13 @@ module.exports = function (grunt) {
       production: {
         options: {
           host: 'loseyourselfinguatemala.com',
-          username: 'loseyourself',
-        //  password: 'skiutah4969',
+          username: appConfig.credentials.ftp.username,
           passphrase: 'skiutah4969',
           deploy_path: '/home/loseyourself/Builds/Admin',
           current_symlink: 'current',
           port: '22',
           //privateKey: require('fs').readFileSync('F:/JFS.pem'),
-          privateKey: require('fs').readFileSync('/Users/Cody/devApps/Keys/LYS_Web.pem'),
+          //privateKey: require('fs').readFileSync('/Users/Cody/devApps/Keys/LYS_Web.pem'),
           //port: '<%= secret.production.port %>',
           releases_to_keep: '3'
           //release_subdir: 'myapp'
