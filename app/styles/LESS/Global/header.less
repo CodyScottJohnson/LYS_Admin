@@ -24,4 +24,36 @@
     height:100%;
 
   }
+  .md-icon-button{
+    .center.vertical;
+    right:20px;
+  }
+}
+.main_nav{
+  z-index:999;
+  width:250px;
+  img{
+    height:70px;
+    opacity:.8;
+    .center.both;
+  }
+  .toolbar_calm{
+    background-color: @trial-2;
+    height:80px;
+    .BoxShadowHelper(1);
+  }
+  md-list-item{
+    height:100px;
+    &.selected{
+      background: @trial-5;
+      .md-list-item-text{
+      color:@trial-1!important;
+    }
+    }
+  .md-list-item-text{
+    .Font_Body;
+    font-size: 20px;
+
+  }
+}
 }

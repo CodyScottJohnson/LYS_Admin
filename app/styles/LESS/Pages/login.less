@@ -4,8 +4,8 @@
   .filter{
     height: 100%;
     width: 100%;
-    background-color: fade(@color-primary-0,40%);
-    backdrop-filter:blur(3px);
+    background-color: fade(@trial-6,20%);
+    //backdrop-filter:blur(3px);
     -webkit-backdrop-filter:blur(3px);
     position: absolute;
   }
@@ -13,7 +13,7 @@
     .login_box_inner {
       //-webkit-backdrop-filter: blur(3px);
       //  backdrop-filter: blur(3px);
-      background-image: linear-gradient(-45deg, fade(white,40%) 80%, fade(#EE89DC,30%) 100%);
+      background-image: linear-gradient(-45deg, fade(white,80%) 60%, fade(lighten(@gray-primary-0,40%),30%) 100%);
       overflow: hidden;
       height: 100%;
       width: 100%;
@@ -56,14 +56,16 @@
           background: none;
           outline: none;
           border: none;
-          color: white;
-          .TextShadowHelper(1);
+          color: @gray-primary-3;
+        //  .TextShadowHelper(1);
           border-bottom: 1px solid fade(@color-secondary-0,50%);
           padding: 20px 20px 5px;
-
+          &::placeholder{
+            color: fade(@gray-primary-3,50%);
+          }
           &:focus {
-            background: fade(white,40%);
-            .BoxShadowHelper(5);
+            //background: fade(white,40%);
+            //.BoxShadowHelper(1);
           }
         }
 
@@ -83,10 +85,10 @@
       bottom: 0;
       border-radius: 0 0 20px 20px;
       .clickable;
-      .background(60%);
+      .background(70%);
 
       &:hover {
-        .background(70%);
+        .background(80%);
       }
 
       &:active {

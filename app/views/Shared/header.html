@@ -1,6 +1,45 @@
 <div class="lys_header">
   <img class="logo" src="https://loseyourselfinguatemala.com/API/Open/Media/Images/Logos/Logo_Main.png" />
-  <div class="title">
+  <div class="title" style="display:inline-block">
     Admin
   </div>
+
+  <md-button ng-click="toggleNav('main_nav')" class="md-icon-button" aria-label="Comment">
+        <md-icon>
+  <i class="material-icons">dashboard</i>
+</md-icon>
+</md-button>
+
 </div>
+<md-sidenav class="main_nav md-sidenav-left md-whiteframe-4dp" md-component-id="main_nav">
+
+   <md-toolbar class="toolbar_calm">
+     <h1 class="md-toolbar-tools"><img class="logo" src="https://loseyourselfinguatemala.com/API/Open/Media/Images/Logos/Logo_Main.png" /></h1>
+   </md-toolbar>
+   <md-content>
+     <md-list flex class="nav_list">
+            <md-list-item ui-sref="app.Testimonial" ng-click="currentPage='bookings'" ng-class="{'selected':currentPage==='bookings'}" >
+
+              <div class="md-list-item-text" layout="column">
+                Bookings
+              </div>
+            </md-list-item>
+            <md-divider ></md-divider>
+            <md-list-item ui-sref="app.Testimonial" ng-click="currentPage='packages'" ng-class="{'selected':currentPage==='packages'}" >
+
+              <div class="md-list-item-text" layout="column">
+                Packages
+              </div>
+            </md-list-item>
+            <md-divider ></md-divider>
+            <md-list-item ui-sref="app.Testimonial" ng-click="currentPage='testimonial'" ng-class="{'selected':currentPage==='testimonial'}" >
+
+              <div class="md-list-item-text" layout="column">
+                Testimonials
+              </div>
+            </md-list-item>
+            <md-divider ></md-divider>
+        </md-list>
+   </md-content>
+
+ </md-sidenav>
