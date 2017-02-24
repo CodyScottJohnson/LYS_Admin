@@ -37,18 +37,19 @@ module.exports = function (grunt) {
     //Deploy Options
     environments: {
       options: {
-        local_path: 'web',
+        local_path: 'dist',
       },
       production: {
         options: {
-          host: 'jfsapp.com',
-          username: 'root',
-          //password: 'skiutah4969',
-          deploy_path: '/srv/Builds/JFS_App/Production',
+          host: 'loseyourselfinguatemala.com',
+          username: 'loseyourself',
+        //  password: 'skiutah4969',
+          passphrase: 'skiutah4969',
+          deploy_path: '/home/loseyourself/Builds/Admin',
           current_symlink: 'current',
-          port: '4969',
+          port: '22',
           //privateKey: require('fs').readFileSync('F:/JFS.pem'),
-          //privateKey: require('fs').readFileSync('/Users/Cody/devApps/Keys/JFS.pem'),
+          privateKey: require('fs').readFileSync('/Users/Cody/devApps/Keys/LYS_Web.pem'),
           //port: '<%= secret.production.port %>',
           releases_to_keep: '3'
           //release_subdir: 'myapp'
