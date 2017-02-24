@@ -1,0 +1,82 @@
+
+<div class="table_main">
+<table >
+  <tr class="title">
+    <th colspan="7">
+      <span>Testimonials</span>
+      <md-button aria-label="menu" >
+        <md-icon><i class="material-icons">library_add</i></md-icon>
+      </md-button>
+    </th>
+  </tr>
+<tr class="header">
+  <th>
+    Active
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    LBs Lost
+  </th>
+  <th>
+    Before
+  </th>
+  <th>
+    After
+  </th>
+  <th>
+    Testimonial
+  </th>
+  <th>
+
+  </th>
+</tr>
+<tr ng-repeat="testimonial in Data.Testimonials" ng-init="isOpen=FALSE">
+  <td>
+    <md-switch ng-model="testimonial.Active" aria-label="Switch 1" value=1>
+  </md-switch>
+  </td>
+  <td>
+    {{testimonial.Name}}
+  </td>
+  <td>
+    {{testimonial.Pounds_Lost}}
+  </td>
+  <td>
+    Before
+  </td>
+  <td>
+    After
+  </td>
+  <td>
+    {{testimonial.Testimonial}}
+  </td>
+  <td>
+<div style="display:block;position:relative;height:70px;width:70px">
+
+    <md-fab-speed-dial   md-open="isOpen" md-direction="left"
+                             class="md-fling">
+            <md-fab-trigger>
+              <md-button aria-label="menu" class="md-fab md-warn">
+                <md-icon><i class="material-icons">more_vert</i></md-icon>
+              </md-button>
+            </md-fab-trigger>
+
+            <md-fab-actions ng-Hide="!isOpen">
+              <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                <md-icon><i class="material-icons">pageview</i></md-icon>
+              </md-button>
+              <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                <md-icon ><i class="material-icons">mode_edit</i></md-icon>
+              </md-button>
+              <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                <md-icon><i class="material-icons">delete</i></md-icon>
+              </md-button>
+            </md-fab-actions>
+          </md-fab-speed-dial>
+        </div>
+  </td>
+</tr>
+</table>
+</div>

@@ -1,8 +1,8 @@
 {
   "ENV":{
-    "API":"https://jfsapp.com/Secure/API/",
-    "Oauth":"https://jfsapp.com/Secure/OAUTH/",
-    "APP_ID":"web_admin",
-    "APP_Secret":"ea954b5d-3868-444b-9917-114a78a3000d"
+    "API_Public":"loseyourselfinguatemala.com/API/Open/",
+    "API_Private":"loseyourselfinguatemala.com/API/Secure/",
+    "client_id":"LYS_Web",
+    "client_secret":"93f6a84d-651f-46ae-ac82-36cd1f6d65df"
   }
 }

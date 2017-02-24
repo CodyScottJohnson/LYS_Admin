@@ -10,15 +10,32 @@
  */
 angular
   .module('lysAdminApp', [
+    'config',
+    'LocalStorageModule',
     'ngAnimate',
     'ngCookies',
+    'ngMaterial',
     'ngResource',
     'ngSanitize',
     'ngTouch',
     'ui.router'
   ])
-  .run(function() {
-
+  .run(function($rootScope, $state, localStorageService) {
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+      var requireLogin = toState.data.requireLogin;
+      if (typeof $rootScope.User === 'undefined') {
+        $rootScope.User = localStorageService.cookie.get('user');
+      }
+      if (requireLogin && typeof $rootScope.User === 'undefined') {
+        event.preventDefault();
+        $state.go('login');
+      }
+      else if (toState.name !='login' && toState.name !== '' && ($rootScope.User === null))
+      {
+        event.preventDefault();
+        $state.go('login');
+      }
+    });
   })
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
@@ -26,7 +43,10 @@ angular
       .state('login', {
         url: '/login',
         templateUrl: 'views/Shared/login.html',
-        controller: 'MainCtrl',
+        controller: 'LoginCtrl',
+        data: {
+          requireLogin: false
+        }
 
       })
       .state('app', {
@@ -44,10 +64,10 @@ angular
         controller: 'MainCtrl',
 
       })
-      .state('about', {
-        url: '/about',
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
+      .state('app.Testimonial', {
+        url: '/testimonial',
+        templateUrl: 'views/Pages/testimonial.html',
+        controller: 'TestimonialCtrl',
 
       });
 

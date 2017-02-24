@@ -8,10 +8,12 @@
  * Controller of the lysAdminApp
  */
 angular.module('lysAdminApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, $mdSidenav) {
+    $scope.toggleNav =function(navID){
+      $mdSidenav(navID)
+         .toggle()
+         .then(function () {
+         });
+     };
+
   });
