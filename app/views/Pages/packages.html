@@ -1,9 +1,9 @@
 
-<div class="table_main">
+<div class="table_packages">
 <table >
   <tr class="title">
     <th colspan="7">
-      <span>Testimonials</span>
+      <span>Packages</span>
       <md-button aria-label="menu" ng-click="showDialog({})">
         <md-icon><i class="material-icons">library_add</i></md-icon>
       </md-button>
@@ -11,7 +11,7 @@
   </tr>
 <tr class="header">
   <th>
-    Active
+    Available
   </th>
   <th>
     Name
@@ -44,11 +44,10 @@
     {{testimonial.Pounds_Lost}}
   </td>
   <td>
-    <img ng-src="https://loseyourselfinguatemala.com/API/Open/Media/Images/Testimonials/{{testimonial.Before_Picture}}" />
+    Before
   </td>
   <td>
-    <img ng-src="https://loseyourselfinguatemala.com/API/Open/Media/Images/Testimonials/{{testimonial.After_Picture}}" />
-
+    After
   </td>
   <td >
     <div class="testimonial">
@@ -59,18 +58,9 @@
   <td>
 
 
-    <md-fab-speed-dial   md-open="isOpen" md-direction="right"
-                             class="md-fling">
-            <md-fab-trigger>
-              <md-button aria-label="menu" class="md-fab md-warn">
-                <md-icon><i class="material-icons">more_vert</i></md-icon>
-              </md-button>
-            </md-fab-trigger>
 
-            <md-fab-actions ng-Hide="!isOpen">
-              <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
-                <md-icon><i class="material-icons">pageview</i></md-icon>
-              </md-button>
+
+            <md-fab-actions >
               <md-button aria-label="Edit" ng-click="showDialog(testimonial)" class="md-fab md-raised md-mini">
                 <md-icon ><i class="material-icons">mode_edit</i></md-icon>
               </md-button>
@@ -78,7 +68,6 @@
                 <md-icon><i class="material-icons">delete</i></md-icon>
               </md-button>
             </md-fab-actions>
-          </md-fab-speed-dial>
 
   </td>
 </tr>

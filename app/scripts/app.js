@@ -60,13 +60,18 @@ angular
       })
       .state('app.Main', {
         url: '/',
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/General/landing.html',
         controller: 'MainCtrl',
 
       })
       .state('app.Testimonial', {
         url: '/testimonial',
         templateUrl: 'views/Pages/testimonial.html',
+        controller: 'TestimonialCtrl',
+
+      }).state('app.Packages', {
+        url: '/packages',
+        templateUrl: 'views/Pages/packages.html',
         controller: 'TestimonialCtrl',
 
       });

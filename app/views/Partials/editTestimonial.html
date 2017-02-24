@@ -1,0 +1,24 @@
+<md-card>
+        <md-card-content>
+          <md-input-container class="md-block" flex-gt-sm>
+              <label>Name</label>
+              <input ng-model="ctrl.Testimonial.Name">
+            </md-input-container>
+            <md-input-container class="md-block">
+        <label>Lbs Lost</label>
+        <input  type="number" step="1" name="rate" ng-model="ctrl.Testimonial.Pounds_Lost"/>
+      </md-input-container>
+{{Testimonial}}
+
+        <md-input-container class="md-block">
+          <label>Testimonial</label>
+          <textarea ng-model="ctrl.Testimonial.Testimonial" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+      </md-card-content>
+        <md-card-actions layout="row" layout-align="center center">
+
+          <md-button ng-click="saveTestimonial(ctrl.Testimonial)" class="md-icon-button full-button" aria-label="Settings">
+            <md-icon><i class="material-icons">save</i></md-icon>
+          </md-button>
+        </md-card-actions>
+      </md-card>
